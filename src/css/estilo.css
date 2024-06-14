@@ -1,20 +1,21 @@
-/* reset.css */
-/* Adicione seu reset CSS aqui */
 
-/* estilo.css */
 body {
     font-family: 'Outfit', sans-serif;
     margin: 0;
     padding: 0;
-    background: #f0f0f0; /* Plano de fundo */
+    background: #000000; /* Plano de fundo */
+    background-repeat: no-repeat;
     color: rgb(255, 255, 255);
     position: relative;
     overflow: hidden;
+    justify-content: center;
+    height: 100vh;
 }
 
 header {
-    background: rgba(0, 0, 0, 0.836);
-    color: rgb(115, 0, 247);
+    
+    background: linear-gradient(#00ff08, #1900ff85, #000000);
+    color: rgb(1, 162, 255);
     text-align: center;
     padding: 1rem 0;
     position: relative;
@@ -64,7 +65,7 @@ button {
     padding: 0.75rem;
     border: none;
     border-radius: 4px;
-    background: #4CAF50;
+    background: linear-gradient(#00ff08, #1900ff85);
     color: white;
     font-size: 1.25rem;
     cursor: pointer;
@@ -72,15 +73,15 @@ button {
 }
 
 button:hover {
-    background: #45a049;
+    background: #00ff22c2;
 }
 
-.links a, .soon-message .icons img {
+.links a, .soon-message .icon img {
     margin: 0.5rem;
     transition: transform 0.3s ease;
 }
 
-.links a:hover, .soon-message .icons img:hover {
+.links a:hover, .soon-message .icon img:hover {
     transform: scale(1.1);
 }
 
@@ -108,6 +109,7 @@ button:hover {
     border-radius: 4px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     z-index: 20;
+    
 }
 
 #backgroundSlider {
