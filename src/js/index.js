@@ -1,7 +1,7 @@
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
         event.preventDefault();
-        
+
         const nome = document.getElementById('nomeInput').value;
         const senha = document.getElementById('senhaInput').value;
 
@@ -22,19 +22,29 @@ document.addEventListener('DOMContentLoaded', function() {
         slides[currentSlide].classList.add('active');
     }
 
-    setInterval(nextSlide, 5000); // Muda o slide a cada 5 segundos
+    setInterval(nextSlide, 3000); // Muda o slide a cada 5 segundos
 
-    // Mensagem "Em breve" ao clicar nos ícones
-    const icons = document.querySelectorAll('.icon');
-    const message = document.getElementById('soonMessage');
+    // Exibir e ocultar tooltip de informações ao clicar no ícone
+    document.getElementById('info-icon').addEventListener('click', function () {
+        var tooltip = document.getElementById('tooltip-text');
+        tooltip.classList.toggle('show-tooltip');
+    });
 
-    icons.forEach(icon => {
-        icon.addEventListener('click', (e) => {
-            e.preventDefault(); // Previne o comportamento padrão do clique
-            message.style.display = 'block';
-            setTimeout(() => {
-                message.style.display = 'none';
-            }, 3000); // A mensagem desaparecerá após 3 segundos
-        });
+    document.getElementById('close-btn').addEventListener('click', function () {
+        var tooltip = document.getElementById('tooltip-text');
+        tooltip.classList.remove('show-tooltip');
     });
 });
+
+
+const images = document.querySelectorAll('#backgroundSlider img');
+let currentImageIndex = 0;
+
+function changeBackground() {
+    images[currentImageIndex].classList.remove('active');
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    images[currentImageIndex].classList.add('active');
+}
+
+// Muda a imagem de fundo a cada 3 segundos
+setInterval(changeBackground, 3000);

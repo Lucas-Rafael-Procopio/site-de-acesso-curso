@@ -1,0 +1,15 @@
+@media (min-width: 600px) and (max-width: 1000px) {
+    #backgroundSlider {
+        height: 110%;
+    }
+
+    .texto {
+        height: 540px; 
+    }
+
+    footer {
+        font-size: 2.5rem;
+    }
+}
+
+

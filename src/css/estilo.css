@@ -3,23 +3,25 @@ body {
     font-family: 'Outfit', sans-serif;
     margin: 0;
     padding: 0;
-    background: #000000; /* Plano de fundo */
+    background: #0e0d0d; /* Plano de fundo */
     background-repeat: no-repeat;
     color: rgb(255, 255, 255);
     position: relative;
     overflow: hidden;
     justify-content: center;
-    height: 100vh;
+    height: 100%;
+    overflow-y: auto;
 }
 
 header {
     
-    background: linear-gradient(#00ff08, #1900ff85, #000000);
-    color: rgb(1, 162, 255);
+    background: linear-gradient(#000000,#b700ff8e,#000000);
+    color: rgb(255, 255, 255);
     text-align: center;
     padding: 1rem 0;
     position: relative;
     z-index: 10;
+    box-shadow: 0 0 10px rgb(115, 0, 247);
 }
 
 h1 {
@@ -59,13 +61,15 @@ input {
     border: 1px solid #1900ff;
     border-radius: 4px;
     font-size: 1rem;
+    color: #1900ff;
+    background: rgba(0, 0, 0, 0);
 }
 
 button {
     padding: 0.75rem;
     border: none;
     border-radius: 4px;
-    background: linear-gradient(#00ff08, #1900ff85);
+    background: linear-gradient(#000000,#c300ff85, #000000);
     color: white;
     font-size: 1.25rem;
     cursor: pointer;
@@ -74,6 +78,19 @@ button {
 
 button:hover {
     background: #00ff22c2;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 10px 0;
+    z-index: 9999; /* valor alto de z-index para garantir que fique na frente */
+    font-size: 1.5rem;
+    box-shadow: 0 0 10px rgb(115, 0, 247);
 }
 
 .links a, .soon-message .icon img {
@@ -117,7 +134,7 @@ button:hover {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 110%;
     z-index: 0;
     overflow: hidden;
 }
@@ -128,9 +145,80 @@ button:hover {
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 3s ease-in-out;
 }
 
 #backgroundSlider img.active {
     opacity: 1;
 }
+
+
+.texto {
+    background: rgba(0, 0, 0, 0.719);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgb(115, 0, 247);
+    padding: 1rem;
+    max-width: 800px;
+    overflow-y: auto;
+    height: 200px;
+}
+
+
+
+.icon-container {
+    position: relative;
+    display: inline-block;
+    color: #ffffff;
+    background-color: #3f3f3f;
+    border-radius: 5px;
+  }
+
+  .tooltip-text {
+    visibility: hidden;
+    width: 100%;
+    max-height: 95vh; /* Limita a altura a 95% da altura da janela */
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    position: fixed; /* Garante que o tooltip fique dentro da tela */
+    z-index: 1000; /* Ajustado para que fique na frente de todos os elementos */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+    overflow-y: auto; /* Adiciona rolagem vertical */
+    
+  }
+
+  .tooltip-content {
+    max-height: 100%;
+  }
+
+  .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .show-tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  
